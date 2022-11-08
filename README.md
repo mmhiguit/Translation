@@ -38,7 +38,7 @@ ii) Si en la secuencia de nucleótidos (file.fasta) hay caracteres diferentes a 
              
              
              
-Con esta linea de comandos, se indica que si en la secuencia de nucleotidos  (file.fasta) hay caracteres diferentes a A, T, G, C, o N, estos deben reemplazarse por nada, es decir, seran eliminados, antes de realizar el proceso de traducción.  
+Con esta linea de comandos, se indica que, si en la secuencia de nucleotidos  (file.fasta) hay caracteres diferentes a A, T, G, C, o N, estos deben reemplazarse por nada, es decir, serán eliminados antes de realizar el proceso de traducción.  
 
 
 
