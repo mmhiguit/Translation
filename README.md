@@ -12,7 +12,7 @@ Para identificar los ORFs, la secuencia de nucleotidos debe cumplir con las sigu
 
 # TRATAMIENTO DE EXCEPCIONES PRESENTES EN LA SECUENCIA DEL GEN 
 
-La base de datos de proteinas fue construida para el genero Thysanoptera, y el programa fue diseñado con la secuencia fasta del gen mitrocondrial que codifica para la proteína cytochrome c oxidase subunit I, adicionalmente se calibró utilizando una secuencia modificada (nucleotide_prueba.txt) en la cual fueron incluidas algunas excepciones, entre ellas, minusculas (atgc), caracteres especiales (-----///****) y NNNNNN, para cada excepción se asumieron las siguientes acciones:
+La base de datos de proteínas fue construida para el género Thysanoptera, y el programa fue diseñado con la secuencia fasta del gen mitrocondrial que codifica para la proteína cytochrome c oxidase subunit I, adicionalmente se calibró utilizando una secuencia modificada (nucleotide_prueba.txt) en la cual fueron incluidas algunas excepciones, entre ellas, minúsculas (atgc), caracteres especiales (-----///****) y NNNNNN, para cada excepción se asumieron las siguientes acciones:
 
 i) Si en la secuencia hay minúsculas estas serán reemplazadas por mayúsculas, en este caso, se utiliza el comando: 
 
@@ -20,7 +20,7 @@ i) Si en la secuencia hay minúsculas estas serán reemplazadas por mayúsculas,
    
    file = file.upper()
 
-ii) Si en la secuencia de nucleótidos (file.fasta) hay caracteres diferentes a A T G C N, estos serán eliminados utilizando la siguiente linea de comandos, 
+ii) Si en la secuencia de nucleótidos (file.fasta) hay caracteres diferentes a A T G C N, estos serán eliminados utilizando la siguiente línea de comandos, 
 
 
 
@@ -38,11 +38,11 @@ ii) Si en la secuencia de nucleótidos (file.fasta) hay caracteres diferentes a 
              
              
              
-Con esta linea de comandos, se indica que, si en la secuencia de nucleotidos  (file.fasta) hay caracteres diferentes a A, T, G, C, o N, estos deben reemplazarse por nada, es decir, serán eliminados antes de realizar el proceso de traducción.  
+Con esta línea de comandos, se indica que, si en la secuencia de nucleótidos  (file.fasta) hay caracteres diferentes a A, T, G, C, o N, estos deben reemplazarse por nada, es decir, serán eliminados antes de realizar el proceso de traducción.  
 
 
 
-iii) Si la secuencia de nucleotidos (file.fasta), incluye la letra N o secuencias de esta letra,  estas no serán eliminadas, y serán remplazadas por la letra ¨X¨ durante la traducción. Esta instrucción se da al definir la función de traducción. 
+iii) Si la secuencia de nucleótidos (file.fasta), incluye la letra N o secuencias de esta letra,  estas no serán eliminadas, y serán remplazadas por la letra ¨X¨ durante la traducción. Esta instrucción se da al definir la función de traducción. 
 
 
                         def translate(gen):
@@ -92,7 +92,7 @@ Para buscar los ORFs primero fue necesario identificar todos los codones de inic
                   
                   i = sequence1.find('ATG', i + 1)
                   
-Con el objetivo de visualizar, que con esta linea de comandos se lograba encontrar todos los codones de inicio, se imprimieron los resultados con la 
+Con el objetivo de visualizar, que con esta línea de comandos se lograba encontrar todos los codones de inicio, se imprimieron los resultados con la 
 siguiente instrucción
 
                   print(starts) # Este comando solo se utilizó para visualizar la ubicación de los codones de incio.
@@ -102,7 +102,7 @@ siguiente instrucción
 <img width="1385" alt="image" src="https://user-images.githubusercontent.com/116923271/200409933-04c5137b-b76a-4659-92eb-7ed67ab2e546.png">
 
 
-Después de verificar que la identifiación de los codones de incio funcionaba correctamente se procede define la función que se empleó para la busqueda de los codones de parada.
+Después de verificar que la identificación de los codones de inicio funcionaba correctamente se procede define la función que se empleó para la búsqueda de los codones de parada.
 
 
                     ## Definiendo función para encontrar el codon de parada.
@@ -205,7 +205,7 @@ Para realizar la traducción mediante python, primero fue necesario construir un
                                                                  "GGG": "G"}
 
 
-La función traducción, se define con la siguiente linea de comandos.
+La función traducción, se define con la siguiente línea de comandos.
 
               def translate(gen):
                   protein_seq = ""
@@ -220,13 +220,13 @@ La función traducción, se define con la siguiente linea de comandos.
 
                   return protein_seq
 
-Para poder realizar este paso de la traducción, fue necesario incluir la convención para los codones que contengan ´Ns´ mencionada al inicio de este documento, en la cual se indica que en caso de presentarse ´Ns´ dentro o en las tripletas estas seran remplazadas por la letra "X", que representa cualquier aminoácido.
+Para poder realizar este paso de la traducción, fue necesario incluir la convención para los codones que contengan ´Ns´ mencionada al inicio de este documento, en la cual se indica que en caso de presentarse ´Ns´ dentro o en las tripletas estas serán remplazadas por la letra "X", que representa cualquier aminoácido.
 
 Con las funciones definidas, se procede a realizar el proceso de traducción.
 
 1. Generación de preORFs.
 
-Para generar el listado de todos los preORFs es necesario unir las secuencias generadas para cada codon de inicio, para lograrlo se corre el siguiente comando
+Para generar el listado de todos los preORFs es necesario unir las secuencias generadas para cada codón de inicio, para lograrlo se corre el siguiente comando
 
       listpreORF = []
 
@@ -239,9 +239,9 @@ Para generar el listado de todos los preORFs es necesario unir las secuencias ge
  
 <img width="946" alt="image" src="https://user-images.githubusercontent.com/116923271/200424199-61561afe-e8dd-4de5-a2fe-5840585c6f7c.png">
 
-Después de verificar que todos los preORFs se encontraban en una lista, se procede con la traducción y se genera el archivo fasta para las proteinas encontradas.
+Después de verificar que todos los preORFs se encontraban en una lista, se procede con la traducción y se genera el archivo fasta para las proteínas encontradas.
 
-2. Traducción y generación de archivo fasta de las proteinas encontradas.
+2. Traducción y generación de archivo fasta de las proteínas encontradas.
 
 La traducción se realizó con la siguiente línea de comandos, y llamando la función (translate) para la traducción y la función para encontrar el codón de parada (find_stop) definidas previamente.
 
@@ -271,22 +271,22 @@ El resultado arrojado por esta línea de comandos es un archivo llamado ¨protei
 
 <img width="492" alt="image" src="https://user-images.githubusercontent.com/116923271/200433954-4c056562-55bb-4261-ab51-022a4e4beee2.png">
 
-3. Identificación de proteinas
+3. Identificación de proteínas
 
-En este punto ya se procede a correr el archivo fasta de las proteinas encontradas frente a una base de datos de proteinas para Thrips. Pero antes se debe crear la base de datos con secuencias de referencia descargadas del NCBI (https://www.ncbi.nlm.nih.gov/protein/?term=thysanoptera), utilizando la siguiente linea de comandos.
+En este punto ya se procede a correr el archivo fasta de las proteínas encontradas frente a una base de datos de proteínas para Thrips. Pero antes se debe crear la base de datos con secuencias de referencia descargadas del NCBI (https://www.ncbi.nlm.nih.gov/protein/?term=thysanoptera), utilizando la siguiente línea de comandos.
 
                 Print('Creando Base de Datos proteins_Thripsdb.fasta')
 
                 os.system('makeblastdb -dbtype prot -in proteins_Thripsdb.fasta')  # Con este comando se puede crear desde la terminal la base de datos usando el comando de la rutina
 
-Finalmente, se corre el blastp de las proteinas encontradas frente a la base de datos del género thysanoptera, el comando utilizado es el siguiente
+Finalmente, se corre el blastp de las proteínas encontradas frente a la base de datos del género thysanoptera, el comando utilizado es el siguiente
 
                 comando_blast = f'blastp -db proteins_Thripsdb.fasta -query proteinas.fasta -outfmt "6 qseqid stitle pident evalue qcovs" -out resultados.tsv'
 
                 os.system(comando_blast) # con este comando se puede correr desde la terminal el blastp usando el comando de la rutina
 
  
- Los resultados se guaradaran en el archivo ¨resultados.tsv¨, donde se podrán observar los nombres de las proteinas encontradas en el archivo analizado con el programa.
+ Los resultados se guardaran en el archivo ¨resultados.tsv¨, donde se podrán observar los nombres de las proteínas encontradas en el archivo analizado con el programa.
  
  <img width="872" alt="image" src="https://user-images.githubusercontent.com/116923271/200439596-d7368503-4f94-437b-85e8-f16e4cda9c53.png">
  
